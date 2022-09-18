@@ -1,5 +1,6 @@
 import { Provider as PaperProvider } from 'react-native-paper'
 
+import { AppBody } from './AppBody'
 import { CarItem, Search } from './Components'
 import { AppProvider } from './contexts'
 import { theme } from './theme'
@@ -9,6 +10,7 @@ export const App = () => {
     <AppProvider>
       <PaperProvider theme={theme}>
         <Search />
+
         <CarItem
           car={{
             id: 1,
@@ -21,6 +23,8 @@ export const App = () => {
             availability: false,
           }}
         />
+
+        <AppBody />
       </PaperProvider>
     </AppProvider>
   )
