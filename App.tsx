@@ -1,11 +1,12 @@
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet } from 'react-native'
+import { Provider as PaperProvider } from 'react-native-paper'
 
 import { CarItem } from './Components'
+import { theme } from './theme'
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <PaperProvider theme={theme}>
       <CarItem
         car={{
           id: 1,
@@ -18,8 +19,7 @@ export default function App() {
           availability: false,
         }}
       />
-      <StatusBar style="auto" />
-    </View>
+    </PaperProvider>
   )
 }
 
