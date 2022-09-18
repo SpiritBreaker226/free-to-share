@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import { Provider as PaperProvider } from 'react-native-paper'
 
-import { CarItem } from './Components'
+import { CarItem, Search } from './Components'
 import { AppProvider } from './contexts'
 import { theme } from './theme'
 
@@ -9,6 +9,7 @@ export default function App() {
   return (
     <AppProvider>
       <PaperProvider theme={theme}>
+        <Search />
         <CarItem
           car={{
             id: 1,
