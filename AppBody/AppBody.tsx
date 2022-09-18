@@ -1,6 +1,6 @@
 import { FC, useCallback, useContext, useEffect } from 'react'
 
-import { CarList } from './Components'
+import { CarList, Message } from './Components'
 import { Types } from '../types'
 import { AppContext } from '../contexts'
 import { useSearchCars } from '../hooks'
@@ -15,7 +15,7 @@ export const AppBody: FC = () => {
   const cars = searchText ? filteredCars : nonFillterCars
 
   const dispatchCars = useCallback(() => {
-    getCars({}).then((carsFromApi) =>
+    getCars().then((carsFromApi) =>
       dispatch({
         type: Types.AddCars,
         payload: { carsFromApi: carsFromApi.cars },
@@ -33,7 +33,11 @@ export const AppBody: FC = () => {
 
   return (
     <main>
-      <CarList cars={cars} />
+      {cars.length ? (
+        <CarList cars={cars} />
+      ) : (
+        <Message hasNoCarsInSearch={!!searchText} />
+      )}
     </main>
   )
 }
