@@ -16,7 +16,7 @@ export enum Types {
 
 type CarPayload = {
   [Types.AddCars]: {
-    carsFromApi: CarFromApi[]
+    cars: Car[]
   }
 }
 

@@ -4,6 +4,7 @@ import { CarList, Message } from './Components'
 import { Types } from '../types'
 import { AppContext } from '../contexts'
 import { useSearchCars } from '../hooks'
+import { convertApiToAppCars } from './helpers'
 
 export const AppBody: FC = () => {
   const {
@@ -15,12 +16,14 @@ export const AppBody: FC = () => {
   const cars = searchText ? filteredCars : nonFillterCars
 
   const dispatchCars = useCallback(() => {
-    getCars().then((carsFromApi) =>
+    getCars().then((carsFromApi) => {
+      const cars = convertApiToAppCars(carsFromApi)
+
       dispatch({
         type: Types.AddCars,
-        payload: { carsFromApi: carsFromApi.cars },
+        payload: { cars },
       })
-    )
+    })
 
     if (searchText.length) {
       dispatch({
