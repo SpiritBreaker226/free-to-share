@@ -23,7 +23,10 @@ export const AppBody: FC = () => {
     )
 
     if (searchText.length) {
-      dispatch({ type: Types.Search, payload: {} })
+      dispatch({
+        type: Types.Search,
+        payload: {},
+      })
     }
   }, [dispatch])
 

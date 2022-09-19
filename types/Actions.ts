@@ -1,5 +1,6 @@
 import { Car } from './Car'
 import { CarFromApi } from './CarFromApi'
+import { FilterTypes } from './FilterTypes'
 
 export type InitialState = {
   cars: Car[]
@@ -22,6 +23,7 @@ type CarPayload = {
 type SearchPayload = {
   [Types.Search]: {}
   [Types.UpdateSearchText]: {
+    filterType: FilterTypes
     searchText: string
   }
 }

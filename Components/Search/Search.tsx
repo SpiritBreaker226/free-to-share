@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { Searchbar } from 'react-native-paper'
 
 import { useApp } from '../../contexts'
-import { Types } from '../../types'
+import { FilterTypes, Types } from '../../types'
 
 export const Search: FC = () => {
   const {
@@ -13,14 +13,14 @@ export const Search: FC = () => {
   const handleTextChange = (searchText: string) => {
     dispatch({
       type: Types.UpdateSearchText,
-      payload: { searchText: searchText.trim() },
+      payload: { filterType: FilterTypes.MAKE, searchText: searchText.trim() },
     })
     dispatch({ type: Types.Search, payload: {} })
   }
 
   return (
     <Searchbar
-      placeholder="Search for cars"
+      placeholder="Search for make"
       onChangeText={handleTextChange}
       value={searchText}
     />
