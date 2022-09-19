@@ -1,11 +1,7 @@
 import axios from 'axios'
 import { CAR_API } from '@env'
 
-import { CarFromApi } from '../types'
-
-type ResponseFromCarApi = {
-  cars: CarFromApi[]
-}
+import { ResponseFromCarApi } from '../types'
 
 export const useSearchCars = () => {
   const getCars = async (): Promise<ResponseFromCarApi> => {
