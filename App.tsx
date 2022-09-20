@@ -8,23 +8,24 @@ import { AppProvider } from './contexts'
 import { theme } from './theme'
 
 export const App = () => (
-  <AppProvider>
-    <PaperProvider theme={theme}>
-      <View style={styles.container}>
+  <View style={styles.container}>
+    <AppProvider>
+      <PaperProvider theme={theme}>
         <Search />
 
         <AppBody />
-      </View>
-    </PaperProvider>
-  </AppProvider>
+      </PaperProvider>
+    </AppProvider>
+  </View>
 )
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    margin: '16px',
+    marginTop: 32,
+    marginBottom: 32,
+    marginLeft: 16,
+    marginRight: 16,
   },
 })
 

@@ -1,5 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React, { FC } from 'react'
+import { Text } from 'react-native-paper'
 
 export type MessageProps = {
   hasNoCarsInSearch: boolean
@@ -7,19 +8,19 @@ export type MessageProps = {
 
 export const Message: FC<MessageProps> = ({ hasNoCarsInSearch }) => {
   return (
-    <section style={styles.messageWrapper}>
+    <View style={styles.messageWrapper}>
       {hasNoCarsInSearch ? (
-        <p style={styles.message}>No cars found</p>
+        <Text style={styles.message}>No cars found</Text>
       ) : (
-        <p style={styles.message}>Waiting for cars to loaded</p>
+        <Text style={styles.message}>Waiting for cars to loaded</Text>
       )}
-    </section>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   messageWrapper: {
-    margin: '80px',
+    margin: 80,
     textAlign: 'center',
   },
   message: {

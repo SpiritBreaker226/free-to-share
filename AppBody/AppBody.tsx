@@ -38,12 +38,12 @@ export const AppBody: FC = () => {
   }, [])
 
   return (
-    <main>
+    <>
       {cars.length ? (
         <CarList cars={cars} />
       ) : (
         <Message hasNoCarsInSearch={!!searchText} />
       )}
-    </main>
+    </>
   )
 }
