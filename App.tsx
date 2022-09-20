@@ -5,16 +5,21 @@ import { Provider as PaperProvider } from 'react-native-paper'
 import { AppBody } from './AppBody'
 import { Search } from './Components'
 import { AppProvider } from './contexts'
+import CarRealmContext from './contexts/CarRealmContext'
 import { theme } from './theme'
+
+const { RealmProvider } = CarRealmContext
 
 export const App = () => (
   <View style={styles.container}>
     <AppProvider>
-      <PaperProvider theme={theme}>
-        <Search />
+      <RealmProvider>
+        <PaperProvider theme={theme}>
+          <Search />
 
-        <AppBody />
-      </PaperProvider>
+          <AppBody />
+        </PaperProvider>
+      </RealmProvider>
     </AppProvider>
   </View>
 )
