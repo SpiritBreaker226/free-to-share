@@ -1,11 +1,10 @@
-import { View } from 'react-native'
 import React, { FC } from 'react'
-
-import { Car } from '../../types'
 import { List, Text } from 'react-native-paper'
 
+import { Car } from '../../models'
+
 export type CarListProps = {
-  cars: Car[]
+  cars: Realm.Results<Car & Realm.Object>
 }
 
 export const CarList: FC<CarListProps> = ({ cars }) => (
@@ -21,7 +20,7 @@ export const CarList: FC<CarListProps> = ({ cars }) => (
           </>
         }
         left={(props) => <List.Icon {...props} icon="folder" />}
-        key={car.id}
+        key={car.id.toString()}
       />
     ))}
   </>
