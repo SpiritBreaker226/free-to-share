@@ -8,12 +8,12 @@ import { convertApiToAppCars } from './helpers'
 
 export const AppBody: FC = () => {
   const {
-    state: { cars: nonFillterCars, filteredCars, searchText },
+    state: { cars: nonFillterCars, filteredCars, searchValue },
     dispatch,
   } = useContext(AppContext)
   const getCars = useSearchCars()
 
-  const cars = searchText ? filteredCars : nonFillterCars
+  const cars = searchValue ? filteredCars : nonFillterCars
 
   const dispatchCars = useCallback(() => {
     getCars().then((carsFromApi) => {
@@ -25,7 +25,7 @@ export const AppBody: FC = () => {
       })
     })
 
-    if (searchText.length) {
+    if (searchValue.length) {
       dispatch({
         type: Types.Search,
         payload: {},
@@ -42,7 +42,7 @@ export const AppBody: FC = () => {
       {cars.length ? (
         <CarList cars={cars} />
       ) : (
-        <Message hasNoCarsInSearch={!!searchText} />
+        <Message hasNoCarsInSearch={!!searchValue} />
       )}
     </>
   )

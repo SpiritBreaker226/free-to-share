@@ -5,12 +5,12 @@ import { FilterTypes } from './FilterTypes'
 export type InitialState = {
   cars: Car[]
   filteredCars: Car[]
-  searchText: string
+  searchValue: string
 }
 
 export enum Types {
   AddCars = 'ADD_CARS',
-  UpdateSearchText = 'UPDATE_SEARCH_TEXT',
+  UpdateFilterValue = 'UPDATE_FILTER_VALUE',
   Search = 'SEARCH',
 }
 
@@ -22,9 +22,9 @@ type CarPayload = {
 
 type SearchPayload = {
   [Types.Search]: {}
-  [Types.UpdateSearchText]: {
+  [Types.UpdateFilterValue]: {
     filterType: FilterTypes
-    searchText: string
+    searchValue?: string
   }
 }
 

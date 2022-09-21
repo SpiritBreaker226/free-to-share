@@ -5,7 +5,7 @@ import { Action, InitialState } from '../types'
 export const initialState: InitialState = {
   cars: [],
   filteredCars: [],
-  searchText: '',
+  searchValue: '',
 }
 
 export interface AppProviderProps {

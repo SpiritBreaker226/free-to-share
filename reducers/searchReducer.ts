@@ -7,10 +7,10 @@ export const searchReducer = (state: InitialState, action: Action) => {
         ...state,
         filteredCars: [],
       }
-    case Types.UpdateSearchText:
+    case Types.UpdateFilterValue:
       return {
         ...state,
-        searchText: action.payload.searchText,
+        searchValue: action.payload.searchValue,
       }
     default:
       return state

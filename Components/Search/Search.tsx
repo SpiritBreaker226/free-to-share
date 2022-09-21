@@ -6,14 +6,14 @@ import { FilterTypes, Types } from '../../types'
 
 export const Search: FC = () => {
   const {
-    state: { searchText },
+    state: { searchValue },
     dispatch,
   } = useApp()
 
   const handleTextChange = (searchText: string) => {
     dispatch({
-      type: Types.UpdateSearchText,
-      payload: { filterType: FilterTypes.MAKE, searchText: searchText.trim() },
+      type: Types.UpdateFilterValue,
+      payload: { filterType: FilterTypes.MAKE, searchValue: searchText.trim() },
     })
     dispatch({ type: Types.Search, payload: {} })
   }
@@ -22,7 +22,7 @@ export const Search: FC = () => {
     <Searchbar
       placeholder="Search for make"
       onChangeText={handleTextChange}
-      value={searchText}
+      value={searchValue}
     />
   )
 }
