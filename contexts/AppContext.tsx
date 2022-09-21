@@ -7,12 +7,10 @@ import {
   useReducer,
 } from 'react'
 
-import { carReducer, searchReducer } from '../reducers'
+import { searchReducer } from '../reducers'
 import { Action, InitialState } from '../types'
 
 export const initialState: InitialState = {
-  cars: [],
-  filteredCars: [],
   searchValue: '',
 }
 
@@ -32,9 +30,7 @@ const AppContext = createContext<{
 })
 
 const mainReducer = (state: InitialState, action: Action) => {
-  let currentState = carReducer(state, action)
-
-  return searchReducer(currentState, action)
+  return searchReducer(state, action)
 }
 
 const AppProvider: FC<AppProviderProps> = ({ children }) => {

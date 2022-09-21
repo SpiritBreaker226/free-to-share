@@ -3,8 +3,6 @@ import { AppContext } from '../contexts'
 import { Action, InitialState } from '../types'
 
 export const initialState: InitialState = {
-  cars: [],
-  filteredCars: [],
   searchValue: '',
 }
 
