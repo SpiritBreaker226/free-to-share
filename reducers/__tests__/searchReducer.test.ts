@@ -13,7 +13,7 @@ describe('searchReducer', () => {
 
   describe('UpdateFilterValue', () => {
     describe('when search value is empty', () => {
-      it("should have no 'AND'", () => {
+      it('should add one item', () => {
         const state = setUp({
           action: {
             type: Types.UpdateFilterValue,
@@ -24,26 +24,38 @@ describe('searchReducer', () => {
           },
         })
 
-        expect(state.searchValue).not.toEqual(expect.stringContaining('AND'))
+        expect(Object.keys(state.searchValue).length).toEqual(1)
       })
     })
 
     describe('when there is an existing values', () => {
-      it("should add 'AND' to the search value", () => {
+      it('should add another filter to search value', () => {
         const state = setUp({
           action: {
             type: Types.UpdateFilterValue,
             payload: {
-              filterType: FilterTypes.COLOR,
-              searchValue: 'green',
+              filterType: FilterTypes.YEAR,
+              searchValue: 1996,
             },
           },
           state: {
-            searchValue: "make CONTAINS[c] 'Mitsubishi'",
+            searchValue: {
+              make: {
+                value: 'Mitsubishi',
+                equals: 'CONTAINS[c]',
+              },
+            },
           },
         })
 
-        expect(state.searchValue).toEqual(expect.stringContaining('AND'))
+        expect(state.searchValue).toEqual(
+          expect.objectContaining({
+            year: {
+              value: 1996,
+              equals: '==',
+            },
+          })
+        )
       })
     })
 
@@ -57,12 +69,20 @@ describe('searchReducer', () => {
             },
           },
           state: {
-            searchValue:
-              "make CONTAINS[c] 'Mitsubishi' AND color CONTAINS[c] 'green'",
+            searchValue: {
+              make: {
+                value: 'Mitsubishi',
+                equals: 'CONTAINS[c]',
+              },
+              color: {
+                value: 'green',
+                equals: 'CONTAINS[c]',
+              },
+            },
           },
         })
 
-        expect(state.searchValue).toEqual('')
+        expect(state.searchValue).toEqual({})
       })
     })
   })

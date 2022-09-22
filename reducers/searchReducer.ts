@@ -1,27 +1,26 @@
 import { Action, FilterTypes, InitialState, Types } from '../types'
-// import dbCars from '../db/DbCars'
 
 export const searchReducer = (state: InitialState, action: Action) => {
   switch (action.type) {
     case Types.UpdateFilterValue:
-      let newSearchValue = state.searchValue
-      console.log('state search value', state.searchValue)
-      if (
-        newSearchValue !== '' &&
-        !newSearchValue.includes(action.payload.filterType)
-      ) {
-        newSearchValue += ` && `
+      if (action.payload.filterType === FilterTypes.CLEAR_SEARCH_VALUE) {
+        return {
+          ...state,
+          searchValue: {},
+        }
       }
 
-      newSearchValue =
-        action.payload.searchValue &&
-        action.payload.filterType !== FilterTypes.CLEAR_SEARCH_VALUE
-          ? `${action.payload.filterType} CONTAINS[c] '${action.payload.searchValue}'`
-          : ''
-      console.log('newSearchValue', newSearchValue)
+      const searchValue = state.searchValue
+
+      searchValue[action.payload.filterType] = {
+        value: action.payload.searchValue || '',
+        equals:
+          action.payload.filterType === FilterTypes.YEAR ? '==' : 'CONTAINS[c]',
+      }
+
       return {
         ...state,
-        searchValue: newSearchValue,
+        searchValue,
       }
     default:
       return state

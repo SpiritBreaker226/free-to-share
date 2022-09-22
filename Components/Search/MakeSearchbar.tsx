@@ -1,16 +1,16 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import { Searchbar } from 'react-native-paper'
 
 import { useApp } from '../../contexts'
 import { FilterTypes, Types } from '../../types'
 
 export const MakeSearchbar: FC = () => {
-  const { dispatch } = useApp()
-  const [searchText, setSearchText] = useState('')
+  const {
+    state: { searchValue },
+    dispatch,
+  } = useApp()
 
   const handleChange = (searchText: string) => {
-    setSearchText(searchText)
-
     dispatch({
       type: Types.UpdateFilterValue,
       payload: { filterType: FilterTypes.MAKE, searchValue: searchText.trim() },
@@ -21,7 +21,7 @@ export const MakeSearchbar: FC = () => {
     <Searchbar
       placeholder="Search for make"
       onChangeText={handleChange}
-      value={searchText}
+      value={searchValue[FilterTypes.MAKE]?.value as string}
     />
   )
 }

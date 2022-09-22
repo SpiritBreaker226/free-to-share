@@ -1,7 +1,8 @@
 import { FilterTypes } from './FilterTypes'
+import { SearchValueType } from './SearchValueType'
 
 export type InitialState = {
-  searchValue: string
+  searchValue: SearchValueType
 }
 
 export enum Types {
@@ -11,7 +12,7 @@ export enum Types {
 type SearchPayload = {
   [Types.UpdateFilterValue]: {
     filterType: FilterTypes
-    searchValue?: string
+    searchValue?: string | number
   }
 }
 

@@ -11,7 +11,7 @@ import { searchReducer } from '../reducers'
 import { Action, InitialState } from '../types'
 
 export const initialState: InitialState = {
-  searchValue: '',
+  searchValue: {},
 }
 
 type AppProviderProps = {
