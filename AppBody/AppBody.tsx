@@ -19,6 +19,9 @@ export const AppBody: FC = () => {
 
   const realm = useRealm()
   const nonFillterCars = useQuery(Car)
+  const cars = searchValue
+    ? nonFillterCars.filtered(searchValue)
+    : nonFillterCars
 
   const handleAddBulkCars = useCallback(
     (cars: CarType[]): void => {
@@ -50,10 +53,10 @@ export const AppBody: FC = () => {
 
   return (
     <>
-      {nonFillterCars.length ? (
-        <CarList cars={nonFillterCars} />
+      {cars.length ? (
+        <CarList cars={cars} />
       ) : (
-        <Message hasNoCarsInSearch={!!searchValue} />
+        <Message hasNoCarsInSearch={!!nonFillterCars} />
       )}
     </>
   )

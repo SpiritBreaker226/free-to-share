@@ -9,7 +9,7 @@
 ## Assumptions made
 
   1. Third-party packages are allowed to be used.
-  2. For Search, when it says 'Simple text matching,' I will assume that means not using wild characters. Instead, the user must enter the car's correct spelling and full name.
+  2. For Search, when it says 'Simple text matching,' ~~I will assume that means not using wild characters. Instead, the user must enter the car's correct spelling and full name.~~ I will assume this is for the car's make, where the user can only type out the car's make.
   3. For the browsing requirement, ~~I will assume that means that the cars should be loaded; however, since the Car API sends 1000 cars and there is no way to limit it; this will slow the loading of the page if this affects performance too much this will change to they need to search to limit the number of cars.~~ I will show the first 25 cars from the Cars API since Cars API sends too many vehicles. Furthermore, going to treat the first load of cars as a cache where we can search through it without having to access the API. There are some benefits from doing this; we can do mix filtering where the APIs can only do a single filter. So, for example, if the user wants all 1994 cars that are purple from Ford, that will not be possible with the API as they only send a single filter. At the same time, the cache finds each item in a smaller and smaller section. Another benefit is that we will not need to get data over the internet too often, as there is a chance that the API endpoint is down. Or the user is no longer online, which will make our application useless until it is back up.
 
 ## Notes
