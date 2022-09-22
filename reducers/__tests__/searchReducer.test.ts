@@ -50,7 +50,7 @@ describe('searchReducer', () => {
 
         expect(state.searchValue).toEqual(
           expect.objectContaining({
-            year: {
+            model_year: {
               value: 1996,
               equals: '==',
             },

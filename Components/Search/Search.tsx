@@ -6,6 +6,7 @@ import { useApp } from '../../contexts'
 import { FilterTypes, Types } from '../../types'
 import { ColorPicker } from './ColorPicker'
 import { MakeSearchbar } from './MakeSearchbar'
+import { YearSlider } from './YearSlider'
 
 export const Search: FC = () => {
   const { dispatch } = useApp()
@@ -31,6 +32,8 @@ export const Search: FC = () => {
           <Dialog.Title>Fitlers</Dialog.Title>
           <Dialog.Content style={styles.searchFitlerContent}>
             <ColorPicker />
+
+            <YearSlider />
           </Dialog.Content>
           <Dialog.Actions>
             <Button onPress={handleClearSearchValue}>Clear Search</Button>

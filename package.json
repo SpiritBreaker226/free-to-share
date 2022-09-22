@@ -21,7 +21,11 @@
     "react-native": "0.69.5",
     "react-native-color": "https://github.com/SpiritBreaker226/react-native-color",
     "react-native-dotenv": "^3.3.1",
+    "react-native-gesture-handler": "^1.6.1",
     "react-native-paper": "^4.12.4",
+    "react-native-range-slider-expo": "^1.4.3",
+    "react-native-svg": "^12.1.0",
+    "react-native-vector-icons": "^9.2.0",
     "react-native-web": "~0.18.7",
     "realm": "^10.21.1",
     "tinycolor2": "^1.4.2"
