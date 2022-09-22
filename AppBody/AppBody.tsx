@@ -6,7 +6,7 @@ import { AppContext } from '../contexts'
 import CarRealmContext from '../contexts/CarRealmContext'
 import { Car } from '../models'
 import { useSearchCars } from '../hooks'
-import { convertApiToAppCars } from './helpers'
+import { convertApiToAppCars, convertSearchValueToString } from './helpers'
 
 const { useRealm, useQuery } = CarRealmContext
 
@@ -19,8 +19,9 @@ export const AppBody: FC = () => {
 
   const realm = useRealm()
   const nonFillterCars = useQuery(Car)
-  const cars = searchValue
-    ? nonFillterCars.filtered(searchValue)
+  // check if there is a search value to use
+  const cars = Object.keys(searchValue).length
+    ? nonFillterCars.filtered(convertSearchValueToString(searchValue))
     : nonFillterCars
 
   const handleAddBulkCars = useCallback(
