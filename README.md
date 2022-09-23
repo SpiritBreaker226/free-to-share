@@ -6,6 +6,12 @@
  2. Run `yarn`
  3. Run `cp .env.example .env`
 
+## Platform Statuses
+
+- iOS is what the app is tested on
+- Android, not tested. Sorry, I don't have an Android device, and my Mac cannot run Andriod Studios
+- The web cannot run since the Realm database does not run in browsers, and browser databases have too many requirements to get running that it
+
 ## Assumptions made
 
   1. Third-party packages are allowed to be used.
