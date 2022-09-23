@@ -29,7 +29,7 @@
 
 ## Notes
 
-  1. I will not have as many tests as I usually would have since this is my first project working with React-Native and the testing framework is different from web React. Furthermore, time constraints force me to make this sacrifice to me the deadline.
+  1. I will not have as many tests as I usually would have since this is my first project working with React-Native and the testing framework is different from web React. Furthermore, time constraints force me to make this sacrifice to me the deadline. Please look at my recent repos in my GitHub since they will need that I to write tests all the time or, at the very least, note why it is not possible.
   2. ~~I can only test on the web; as a simple put, my mac computer is too old to run the iOS simulator~~ After doing some more research found out how to use the iOS simulator and was able to run the application on it.
   3. For Andriod, Andriod Studio barely runs on the application, so we will not be able to test for it.
   4. The year slider is minimized to 1908 when Ford first introduced the Model T.
