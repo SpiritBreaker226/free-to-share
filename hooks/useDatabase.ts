@@ -17,9 +17,11 @@ export const useDatabase = (searchString: string) => {
     (cars: CarType[]): void => {
       realm.write(() => {
         cars.forEach((car) => {
-          const existingCars = nonFillterCars.filtered(`id == ${car.id}`)
+          const existingCar = nonFillterCars.filtered(`id == ${car.id}`)
 
-          if (!existingCars.length) {
+          if (existingCar.length) {
+            existingCar[0].update(car)
+          } else {
             realm.create('Car', Car.generate(car))
           }
         })

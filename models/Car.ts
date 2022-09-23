@@ -27,6 +27,21 @@ export class Car extends Realm.Object {
       imageSource: car.imageSource || `${IMAGE_API}/200?random=${car.id}`,
     }
   }
+
+  update(car: CarType) {
+    const existingCar = this
+
+    existingCar.make = car.make
+    existingCar.model = car.model
+    existingCar.color = car.color
+    existingCar.model_year = car.model_year
+    existingCar.vin = car.vin
+    existingCar.price = car.price
+    existingCar.availability = car.availability
+    existingCar.imageSource =
+      car.imageSource || `${IMAGE_API}/200?random=${existingCar.id}`
+  }
+
   // To use a class as a Realm object type, define the object schema on the static property "schema".
   static schema = {
     name: 'Car',
