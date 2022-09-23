@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { ScrollView } from 'react-native'
 import { List, Text } from 'react-native-paper'
 
 import { Car } from '../../models'
@@ -8,7 +9,7 @@ export type CarListProps = {
 }
 
 export const CarList: FC<CarListProps> = ({ cars }) => (
-  <>
+  <ScrollView>
     {cars.map((car) => (
       <List.Item
         title={car.make}
@@ -23,5 +24,5 @@ export const CarList: FC<CarListProps> = ({ cars }) => (
         key={car.id.toString()}
       />
     ))}
-  </>
+  </ScrollView>
 )
