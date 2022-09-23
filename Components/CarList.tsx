@@ -1,8 +1,8 @@
 import React, { FC, useCallback, useState } from 'react'
 import { FlatList, SafeAreaView } from 'react-native'
 
-import { CarItem } from '../../Components'
-import { Car } from '../../models'
+import { Car } from '../models'
+import { CarItem } from './CarItem'
 
 export type CarListProps = {
   cars: Realm.Results<Car & Realm.Object>

@@ -1,6 +1,6 @@
 import { FC, useCallback, useContext, useEffect } from 'react'
 
-import { CarList, Message } from './Components'
+import { CarList, Message } from '../Components'
 import { AppContext } from '../contexts'
 import { useDatabase, useSearchCars } from '../hooks'
 import { convertApiToAppCars, convertSearchValueToString } from './helpers'
