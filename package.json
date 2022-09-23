@@ -44,6 +44,22 @@
     "react-test-renderer": "18.0.0",
     "typescript": "~4.3.5"
   },
+  "babel": {
+    "presets": [
+      "babel-preset-expo"
+    ],
+    "plugins": [
+      [
+        "module:react-native-dotenv"
+      ],
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ]
+    ]
+  },
   "jest": {
     "preset": "react-native",
     "moduleFileExtensions": [
