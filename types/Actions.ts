@@ -1,5 +1,5 @@
 import { FilterTypes } from './FilterTypes'
-import { SearchValueType } from './SearchValueType'
+import { SearchValueQueryParts, SearchValueType } from './SearchValueType'
 
 export type InitialState = {
   searchValue: SearchValueType
@@ -12,7 +12,7 @@ export enum Types {
 type SearchPayload = {
   [Types.UpdateFilterValue]: {
     filterType: FilterTypes
-    searchValue?: string | number
+    searchValue?: SearchValueQueryParts['value']
   }
 }
 

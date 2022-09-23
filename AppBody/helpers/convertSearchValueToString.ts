@@ -11,6 +11,11 @@ export const convertSearchValueToString = (
 
   const newSearchValue: string[] = filters.map((filter) => {
     const { value: filterValue, equals } = searchValue[filter]
+
+    if (Array.isArray(filterValue)) {
+      return `${filter} ${equals[0]} ${filterValue[0]} && ${filter} ${equals[1]} ${filterValue[1]}`
+    }
+
     const value = Number.isInteger(filterValue)
       ? filterValue
       : `'${filterValue}'`

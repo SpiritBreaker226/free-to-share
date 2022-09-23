@@ -1,6 +1,6 @@
-type SearchValueQueryParts = {
-  value: string | number
-  equals: string
+export type SearchValueQueryParts = {
+  value: string | [string, string] | number | [number, number]
+  equals: string | [string, string]
 }
 
 export type SearchValueType = {

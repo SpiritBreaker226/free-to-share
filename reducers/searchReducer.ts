@@ -12,10 +12,19 @@ export const searchReducer = (state: InitialState, action: Action) => {
 
       const searchValue = state.searchValue
 
-      searchValue[action.payload.filterType] = {
-        value: action.payload.searchValue || '',
-        equals:
-          action.payload.filterType === FilterTypes.YEAR ? '==' : 'CONTAINS[c]',
+      if (Array.isArray(action.payload.searchValue)) {
+        searchValue[action.payload.filterType] = {
+          value: action.payload.searchValue,
+          equals: ['>=', '<='],
+        }
+      } else {
+        searchValue[action.payload.filterType] = {
+          value: action.payload.searchValue || '',
+          equals:
+            action.payload.filterType === FilterTypes.YEAR
+              ? '=='
+              : 'CONTAINS[c]',
+        }
       }
 
       return {

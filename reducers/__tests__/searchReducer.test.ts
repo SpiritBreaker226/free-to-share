@@ -85,5 +85,28 @@ describe('searchReducer', () => {
         expect(state.searchValue).toEqual({})
       })
     })
+
+    describe('when filter type is uses a range', () => {
+      it('should have values in an array', () => {
+        const state = setUp({
+          action: {
+            type: Types.UpdateFilterValue,
+            payload: {
+              filterType: FilterTypes.YEAR,
+              searchValue: [1996, 2012],
+            },
+          },
+        })
+
+        expect(state.searchValue).toEqual(
+          expect.objectContaining({
+            model_year: {
+              value: [1996, 2012],
+              equals: ['>=', '<='],
+            },
+          })
+        )
+      })
+    })
   })
 })

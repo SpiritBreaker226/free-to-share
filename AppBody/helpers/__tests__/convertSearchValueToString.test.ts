@@ -29,4 +29,15 @@ describe('convertSearchValueToString', () => {
       expect(searchText).toEqual('')
     })
   })
+
+  it('should convert search value to string', () => {
+    const searchText = convertSearchValueToString({
+      year: {
+        value: [2003, 2016],
+        equals: ['>=', '<='],
+      },
+    })
+
+    expect(searchText).toEqual('year >= 2003 && year <= 2016')
+  })
 })
