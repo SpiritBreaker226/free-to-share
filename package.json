@@ -11,13 +11,11 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.19.1",
-    "@expo/webpack-config": "^0.17.0",
     "@realm/react": "^0.3.2",
     "axios": "^0.27.2",
     "expo": "~46.0.9",
     "expo-modules-autolinking": "^0.10.3",
     "expo-splash-screen": "~0.16.2",
-    "expo-status-bar": "~1.4.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.5",
