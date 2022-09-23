@@ -1,4 +1,5 @@
 import { Realm } from '@realm/react'
+import { IMAGE_API } from '@env'
 
 import { Car as CarType } from '../types'
 
@@ -23,7 +24,7 @@ export class Car extends Realm.Object {
       vin: car.vin,
       price: car.price,
       availability: car.availability,
-      imageSource: null,
+      imageSource: car.imageSource || `${IMAGE_API}/200?random=${car.id}`,
     }
   }
   // To use a class as a Realm object type, define the object schema on the static property "schema".
