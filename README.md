@@ -1,10 +1,17 @@
 # Free to Share
 
+## Requirements
+
+- Mac
+- Xcode version 13.1+ as that is the version that the app was tested on
+- Have [CocoaPods](https://cocoapods.org) install
+
 ## To Install
 
  1. In the terminal make sure you are in the project's root directory
  2. Run `yarn`
  3. Run `cp .env.example .env`
+ 4. Run `yarn ios` - Asumming this in on a Mac, Android has not been tested.
 
 ## Platform Statuses
 
