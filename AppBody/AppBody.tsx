@@ -34,7 +34,7 @@ export const AppBody: FC = () => {
       {cars.length ? (
         <CarList cars={cars} />
       ) : (
-        <Message hasNoCarsInSearch={!!searchValue} />
+        <Message hasNoCarsInSearch={!searchValue} />
       )}
     </>
   )
