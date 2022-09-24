@@ -16,11 +16,22 @@ export const YearSlider: FC = () => {
     dispatch,
   } = useApp()
 
+  const getYearRange = (isFrom: boolean): [number, number] => {
+    const years = searchValue[FilterTypes.YEAR]?.value as [number, number]
+
+    if (!years) {
+      if (isFrom) {
+        return [0, todaysYear]
+      }
+
+      return [yearMassProduct, 0]
+    }
+
+    return years
+  }
+
   const handleYearFromChange = (year: number) => {
-    const years = (searchValue[FilterTypes.YEAR]?.value as [
-      number,
-      number
-    ]) || [0, todaysYear]
+    const years = getYearRange(true)
 
     dispatch({
       type: Types.UpdateFilterValue,
@@ -29,10 +40,7 @@ export const YearSlider: FC = () => {
   }
 
   const handleYearToChange = (year: number) => {
-    const years = (searchValue[FilterTypes.YEAR]?.value as [
-      number,
-      number
-    ]) || [yearMassProduct, 0]
+    const years = getYearRange(false)
 
     dispatch({
       type: Types.UpdateFilterValue,
@@ -43,17 +51,12 @@ export const YearSlider: FC = () => {
   return (
     <View style={styles.container}>
       <Paragraph>Year</Paragraph>
-      {(searchValue[FilterTypes.YEAR]?.value as [number, number]).length && (
-        <View style={styles.selectedContainer}>
-          <Text>
-            From:{' '}
-            {(searchValue[FilterTypes.YEAR]?.value as [number, number])[0]}
-          </Text>
-          <Text>
-            To: {(searchValue[FilterTypes.YEAR]?.value as [number, number])[1]}
-          </Text>
-        </View>
-      )}
+
+      <View style={styles.selectedContainer}>
+        <Text>From: {getYearRange(true)[0] || yearMassProduct}</Text>
+        <Text>To: {getYearRange(false)[1] || todaysYear}</Text>
+      </View>
+
       <Slider
         containerStyle={styles.sliderContainer}
         min={yearMassProduct}
