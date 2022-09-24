@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useState } from 'react'
-import { FlatList, SafeAreaView } from 'react-native'
+import { FlatList, SafeAreaView, StyleSheet } from 'react-native'
 
 import { Car } from '../models'
 import { CarItem } from './CarItem'
@@ -24,7 +24,7 @@ export const CarList: FC<CarListProps> = ({ cars }) => {
   const fetchMore = () => setNumberOfCars(numberOfCars + 24)
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <FlatList<Car & Realm.Object>
         data={cars.slice(0, numberOfCars)}
         renderItem={renderItem}
@@ -35,3 +35,9 @@ export const CarList: FC<CarListProps> = ({ cars }) => {
     </SafeAreaView>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    height: 550,
+  },
+})
