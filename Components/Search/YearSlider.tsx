@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
-import { Paragraph } from 'react-native-paper'
+import { StyleSheet, View } from 'react-native'
+import { Paragraph, Text } from 'react-native-paper'
 import Slider from 'react-native-range-slider-expo'
 
 import { useApp } from '../../contexts'
@@ -40,14 +41,44 @@ export const YearSlider: FC = () => {
   }
 
   return (
-    <>
+    <View style={styles.container}>
       <Paragraph>Year</Paragraph>
+      {(searchValue[FilterTypes.YEAR]?.value as [number, number]).length && (
+        <View style={styles.selectedContainer}>
+          <Text>
+            From:{' '}
+            {(searchValue[FilterTypes.YEAR]?.value as [number, number])[0]}
+          </Text>
+          <Text>
+            To: {(searchValue[FilterTypes.YEAR]?.value as [number, number])[1]}
+          </Text>
+        </View>
+      )}
       <Slider
+        containerStyle={styles.sliderContainer}
         min={yearMassProduct}
         max={todaysYear}
         fromValueOnChange={handleYearFromChange}
         toValueOnChange={handleYearToChange}
       />
-    </>
+    </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingBottom: 12,
+    paddingTop: 8,
+    marginTop: 8,
+  },
+  selectedContainer: {
+    marginTop: 8,
+    marginBottom: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  sliderContainer: {
+    paddingTop: 0,
+  },
+})

@@ -47,6 +47,6 @@ export const Search: FC = () => {
 
 const styles = StyleSheet.create({
   searchFitlerContent: {
-    height: 180,
+    height: 210,
   },
 })
