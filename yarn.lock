@@ -3974,6 +3974,11 @@ expo-splash-screen@~0.16.2:
     "@expo/configure-splash-screen" "^0.6.0"
     "@expo/prebuild-config" "~5.0.0"
 
+expo-status-bar@~1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.4.0.tgz#c0317de2c53878340f4b4f00ff7e4ba14399a7fb"
+  integrity sha512-vh98g8qMIjig/2XTBsoAWS6Vo2dIIwDWjB3/GiuZ9Lazpxc9GO/APfJ4dar7MibzIDUKIrjotrcL6rLdPH13Ew==
+
 expo@~46.0.9:
   version "46.0.10"
   resolved "https://registry.yarnpkg.com/expo/-/expo-46.0.10.tgz#a352057489474279b0207cc6b01540edc04e1806"
@@ -7350,7 +7355,7 @@ prompts@^2.0.1, prompts@^2.3.2, prompts@^2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.5.6, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -7485,20 +7490,17 @@ react-native-codegen@^0.70.5:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
-"react-native-color@https://github.com/SpiritBreaker226/react-native-color":
-  version "0.0.10"
-  resolved "https://github.com/SpiritBreaker226/react-native-color#b824efbb3945ff05a68469b2a4726eee09cc374c"
-  dependencies:
-    prop-types "^15.6.0"
-    react-native-sliders "^2.0.2"
-    tinycolor2 "^1.4.1"
-
 react-native-dotenv@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-3.3.1.tgz#8f399cf28ca77d860d8e7f7323e439fa60a8ca0b"
   integrity sha512-gAKXout1XCwCqJ3QPGoQAF2eRzOHgOnwg3x19z+ssow8bDIksJeKBqvoHDyGziVilAIP1J0bEC9Jf+VF8nFang==
   dependencies:
     dotenv "^10.0.0"
+
+react-native-element-dropdown@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-element-dropdown/-/react-native-element-dropdown-2.3.0.tgz#1d0d09778207f073b39216bb2ea10452648a8616"
+  integrity sha512-HzuR1+PVS3YJD835ZAmJ7gNzkIvYJady8EwJS0Nnu6NoEeLXyJTvrD2G+dkeBmckZ+FuGjUKeYqhs508gok83w==
 
 react-native-fast-image@^8.6.1:
   version "8.6.1"
@@ -7544,13 +7546,6 @@ react-native-range-slider-expo@^1.4.3:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/react-native-range-slider-expo/-/react-native-range-slider-expo-1.4.3.tgz#d21baab8820d8827992b94d881868d634337de0c"
   integrity sha512-EAIXfuCxJYffi6yqOcmCMWzvPNRSJ7zgDhQtVXXe2fokYaXVLG1uq2jM+cpTStMusIIGIo9HGZAja94N+rnNyg==
-
-react-native-sliders@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-sliders/-/react-native-sliders-2.0.2.tgz#feb53bc3d80f42d74d2c6fa36cdeec092fc92c60"
-  integrity sha512-1P4P2+bS7qDWo2UmcrcMjniLIV3ZlXREzwV+/DWMsMULuIaZjfFo2JPAfd6Sk15WkHUotc8r5TobqZfRmi4eag==
-  dependencies:
-    prop-types "^15.5.6"
 
 react-native-svg@^12.1.0:
   version "12.4.4"
@@ -8698,11 +8693,6 @@ through@2:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==
-
-tinycolor2@^1.4.1, tinycolor2@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.2.tgz#3f6a4d1071ad07676d7fa472e1fac40a719d8803"
-  integrity sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==
 
 tmp@^0.0.33:
   version "0.0.33"
