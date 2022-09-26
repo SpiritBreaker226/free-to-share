@@ -23,11 +23,11 @@ export const AppBody: FC = () => {
       // add cars to database
       handleAddBulkCars(cars)
     })
-  }, [dispatch])
+  }, [handleAddBulkCars, getCars])
 
   useEffect(() => {
     dispatchCars()
-  }, [])
+  }, [dispatchCars])
 
   return (
     <>

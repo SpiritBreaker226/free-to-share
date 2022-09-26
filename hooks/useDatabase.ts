@@ -27,7 +27,7 @@ export const useDatabase = (searchString: string) => {
         })
       })
     },
-    [realm]
+    [realm, nonFillterCars]
   )
 
   return { handleAddBulkCars, cars }
