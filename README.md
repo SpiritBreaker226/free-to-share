@@ -10,8 +10,7 @@
 
  1. In the terminal make sure you are in the project's root directory
  2. Run `yarn`
- 3. Run `cp .env.example .env`
- 4. Run `yarn ios` - Asumming this in on a Mac, Android has not been tested.
+ 3. Run `yarn ios` - Asumming this in on a Mac, Android has not been tested.
 
 ## Platform Statuses
 

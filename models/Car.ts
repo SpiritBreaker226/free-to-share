@@ -1,7 +1,8 @@
 import { Realm } from '@realm/react'
-import { IMAGE_API } from '@env'
 
 import { Car as CarType } from '../types'
+
+const IMAGE_API = 'https://picsum.photos/200'
 
 export class Car extends Realm.Object {
   id!: number
