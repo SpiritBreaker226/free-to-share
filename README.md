@@ -5,6 +5,7 @@
 - Mac
 - Xcode version 13.1+ as that is the version that the app was tested on
 - Have [CocoaPods](https://cocoapods.org) install
+- Tested on iPhone 8 with iOS 15 - my computer is not able to run the latest simulator images
 
 ## To Install
 
